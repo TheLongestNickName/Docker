@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  apache:
+    image: httpd:2.4
+    ports:
+      - 8081:80
+    volumes:
+      - ./Doc:/usr/local/apache2/htdocs
