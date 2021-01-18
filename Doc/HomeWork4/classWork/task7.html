@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+
+        }
+        .ball {
+            position:absolute;
+            width: 30px;
+            height: 30px;
+            background: #CC3F85;
+            border-radius: 100%;
+            animation: dws-bounce 3s linear infinite
+        }
+        @keyframes dws-bounce {
+
+            0% { bottom:70%; left: 10% }
+            5% { bottom:0; width:30px; height:30px; left: 20%; background: #CC3F85;}
+            10% { bottom:0; width:40px; height:5px; background: red;}
+            15% { bottom:0; width:30px; height:30px; }
+            20% { bottom:30%; background: #CC3F85;}
+            25% { bottom:30%; background: #CC3F85;}
+            30%{ bottom:0; width:30px; height:30px; background: #CC3F85;}
+            35% { bottom:0; width:40px; height:5px; background: red;}
+            50% { bottom:0; width:30px; height:30px; }
+            55% { bottom:15%; background: #CC3F85;}
+            60% { bottom:15%; background: #CC3F85;}
+            65% { bottom:0; width:30px; height:30px; background: #CC3F85;}
+            70% { bottom:0; width:40px; height:5px; background: red;}
+            75% { bottom:0; width:30px; height:30px; }
+            80% { bottom:10%; background: #CC3F85;}
+            85% { bottom:10%; background: #CC3F85;}
+            90% { bottom:0%; background: #CC3F85;}
+            95% { bottom:0%; background: #CC3F85;}
+            100% { bottom:0%; background: #CC3F85; left: 100%}
+        }
+
+    </style>
+</head>
+<body>
+    <div style="width: 700px; height: 600px; border: 1px solid black; margin: 0 auto; position: relative; overflow: hidden">
+        <div class="ball"></div>
+    </div>
+</body>
+</html>

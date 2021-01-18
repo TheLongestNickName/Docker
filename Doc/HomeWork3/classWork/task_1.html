@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            float: left;
+            margin: 5px;
+        }
+        .box:nth-child(even){
+            background: brown;
+        }
+        .box:nth-child(odd){
+            background: cadetblue;
+        }
+        .wrap{
+            width: 600px;
+        }
+
+        .box_1:hover{
+            background: gold;
+        }
+        .box_2:hover{
+            background: red;
+        }
+        .box_3:hover{
+            background: cornsilk;
+        }
+        .box_4:hover{
+            background: darkkhaki;
+        }
+        .box_5:hover{
+            background: darkred;
+        }
+        .wrap2{
+            margin-left: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div style="margin: 0 auto; width: 700px">
+        <div class="wrap">
+            <div class="box box_1"></div>
+            <div class="box box_2"></div>
+            <div class="box box_3"></div>
+            <div class="box box_4"></div>
+            <div class="box box_5"></div>
+        </div>
+        <div class="wrap wrap2">
+            <div class="box box_1"></div>
+            <div class="box box_2"></div>
+            <div class="box box_3"></div>
+            <div class="box box_4"></div>
+            <div class="box box_5"></div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        .wrap{
+            background: gainsboro;
+            height: 250px;
+            width: 1024px;
+            margin: 0 auto;
+            margin-top: 50px;
+        }
+        .wrap2{
+            width: 1024px;
+            margin: 10px auto;
+            height: 500px;
+        }
+        .ALevel{
+            margin: 0 auto;
+        }
+        .ALevel h1{
+            text-align: center;
+            color: white;
+            font-size: 50px;
+        }
+        .ALevelimg{
+            width: 150px;
+        }
+        .ALevelimg img{
+            margin:10px;
+            background: white;
+        }
+        .ItsGood{
+
+            float: right;
+        }
+        .spa1{
+            background: green;
+            font-size: 45px;
+            letter-spacing: -3px;
+        }
+        .spa2{
+            font-size: 45px;
+            margin: 0 15px;
+        }
+        .spa3{
+            background: burlywood;
+            letter-spacing: 7px;
+            font-size: 45px;
+            text-decoration: line-through;
+        }
+        .spa1, .spa2, .spa3{
+            color: white;
+        }
+        .oneColumn, .twoColumn, .threeColumn{
+            float: left;
+            width: 33.33%;
+            height: 100%;
+        }
+        .oneColumn{
+            background: dodgerblue;
+            color: white;
+            line-height: 20px;
+        }
+        .oneColumn h2{
+            font-weight: bold;
+            margin-bottom: 7px;
+            text-align: center;
+
+        }
+        .twoColumn{
+            text-align: center;
+            background: green;
+            color: white;
+        }
+        .liYellow{
+            color: yellow;
+            list-style-type: none;
+        }
+        .liBlack{
+            color: black;
+        }
+        .lastLi{
+            list-style-type: none;
+        }
+        .lastLi:before{
+            content: 'x';
+            margin-right: 35px;
+        }
+    </style>
+</head>
+<body>
+    <header >
+         <div class="wrap">
+            <div class="ALevelimg">
+                <img src="icon.png">
+            </div>
+             <div class="ALevel">
+                 <h1>A-LeVeL</h1>
+             </div>
+             <div class="ItsGood">
+                 <span class="spa1">CSS</span> <span class="spa2">це</span> <span class="spa3"> ķřутÖ</span>
+             </div>
+         </div>
+    </header>
+    <main>
+        <div class="wrap2">
+            <div class="oneColumn">
+                <h2>Каскадные <br> таблицы стилей (CSS)</h2> используются для описания внешнего вида документа,
+                написанного языком разметки. CSS привносит жизнь в HTML-документ, выбирая шрифты,
+                применяя цвета, определяя отступы, позиционируя элементы, анимируя взаимодействия
+                и многое другое.
+                <b>Объявление стиля состоит из двух частей:</b> элемента веб-страницы — <b>селектора</b> , и команды
+                форматирования — <b>блока объявления.</b>
+            </div>
+            <div class="twoColumn">
+                <div style="margin-top: 150px">
+                    <h2 style="text-align: center">Селекторы CSS:</h2>
+                    <div style="width: 200px; margin-left: 55px">
+                        <ul>
+                            <li class="liBlack"><ul><li class="liYellow">ниверсальными</li></ul></li>
+                            <li class="liBlack"><ul><li class="liYellow">електором элемента;</li></ul></li>
+                            <li class="liBlack"><ul><li class="liYellow">классовый селектор;</li></ul></li>
+                            <li class="liBlack"><ul><li class="liYellow">селектор ID.</li></ul></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="threeColumn">
+                <p style="text-align: center">Примеры селекторов:</p>
+                <div style=" height: 200px; margin: 0 auto; width: 150px" >
+                    <ul>
+                        <li class="lastLi">* {}</li>
+                        <li class="lastLi">p.class {}</li>
+                        <li class="lastLi">*.class {}</li>
+                        <li class="lastLi">.class {}</li>
+                        <li class="lastLi">span {}</li>
+                        <li class="lastLi">div#id</li>
+                        <li class="lastLi">span#id</li>
+                        <li class="lastLi">article#id</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </main>
+</body>
+</html>

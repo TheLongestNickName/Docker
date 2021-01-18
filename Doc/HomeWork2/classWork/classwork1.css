@@ -1,0 +1,16 @@
+h1, h2{
+    text-align: center;
+}
+h1{
+    margin: 5px auto;
+}
+h2{
+    margin: 5px auto;
+}
+.indent{
+    text-indent: 2.5em;
+}
+.LastSpan{
+    display: block;
+    text-align: center;
+}

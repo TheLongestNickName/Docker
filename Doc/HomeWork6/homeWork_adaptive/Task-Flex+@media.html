@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style>
+        .wrap_menu {
+            display: flex;
+            justify-content: space-around;
+            flex-grow: 1;
+            margin-top: 30px;
+        }
+
+        .wrap_menu li {
+            display: flex;
+            list-style-type: none;
+            align-items: center;
+        }
+
+        .wrap_menu li:hover {
+            color: red;
+        }
+
+        .wrap_menu img {
+            width: 30px;
+            height: 25px;
+        }
+
+        .wrap_top_top {
+            display: flex;
+        }
+
+        .gear img {
+            position: relative;
+            left: 47px;
+            top: -4px;
+            width: 60px;
+            height: 49px;
+            align-self: center;
+        }
+
+        .wrap_head {
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+            margin-bottom: 20px;
+
+        }
+
+        .top_centr {
+            margin-top: 20px;
+            font-size: 95px;
+            color: red;
+        }
+
+        .top_bottom {
+            color: white;
+            font-size: 40px;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .top_bottom span:nth-child(1) {
+            background: green;
+            width: 100px;
+        }
+
+        .top_bottom span:nth-child(2) {
+            width: 70px;
+            color: red;
+            font-size: 40px;
+            margin: 0 0 0 20px;
+        }
+
+        .top_bottom span:nth-child(3) {
+            width: 100px;
+            background: chocolate;
+            text-decoration: line-through;
+        }
+
+        .main {
+            display: flex;
+            flex-direction: column;
+            border: 2px solid yellow;
+            overflow: hidden;
+        }
+
+        .wrap_center {
+            display: flex;
+            border-left: none;
+            border-right: none;
+            border-top: 2px solid yellow;
+        }
+
+        .wrap_center div.left_colum, div.cent_colum, div.right_colum {
+            align-self: stretch;
+            width: 33.33%;
+        }
+
+        .wrap_center div:nth-child(2) {
+            border-right: 2px solid yellow;
+        }
+
+        .left_colum {
+            background: dodgerblue;
+            color: white;
+            font-size: 35px;
+        }
+
+        .left_colum p:first-letter {
+            font-size: 60px;
+        }
+
+        .cent_colum {
+            display: flex;
+            flex-direction: column;
+            background: green;
+            justify-content: center;
+        }
+
+        .cent_colum > div > ul {
+            list-style-type: none;
+            padding-left: 0;
+
+        }
+
+        .cent_colum > div > ul > li > ul > li {
+            width: 200px;
+            color: yellow;
+            list-style-type: disc;
+            margin: 0 auto;
+
+        }
+
+        .right_colum {
+            background: yellowgreen;
+        }
+
+        .right_colum > div > ul > li:before {
+            content: 'x';
+            margin-right: 35px;
+        }
+
+        .right_colum > div > ul > li {
+            list-style-type: none;
+        }
+
+        .bottom {
+            background: lightsteelblue;
+            display: flex;
+        }
+
+        .bottom img {
+            margin: 10px 0 0 10px;
+            height: 20vmax;
+            width: 30vmax;
+        }
+
+        .bottom div.box {
+            display: flex;
+            flex-grow: 1;
+            justify-content: flex-end;
+        }
+
+        .box2 {
+            border: 1px solid black;
+            width: 600px;
+            height: 200px;
+            margin-top: 50px;
+            margin-right: 15px;
+            background: gray;
+            display: flex;
+        }
+
+        .box2 p, span {
+            width: 50%;
+            font-size: 25px;
+        }
+
+        .box2 p {
+            margin-left: 5px;
+        }
+
+        .box2 span {
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-end;
+            margin: 0 5px 35px 0;
+        }
+
+        .menu__btn {
+            display: flex; /* используем flex для центрирования содержимого */
+            align-items: center; /* центрируем содержимое кнопки */
+            position: fixed;
+            visibility: hidden;
+            top: 40px;
+            left: 130px;
+            width: 26px;
+            height: 26px;
+            cursor: pointer;
+            z-index: 1;
+        }
+
+        /* добавляем "гамбургер" */
+        .menu__btn > span,
+        .menu__btn > span::before,
+        .menu__btn > span::after {
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: #616161;
+        }
+
+        .menu__btn > span::before {
+            content: '';
+            top: -8px;
+        }
+
+        .menu__btn > span::after {
+            content: '';
+            top: 8px;
+        }
+
+        #menu__toggle {
+            opacity: 0;
+        }
+
+
+        @media (max-width: 360px) {
+            .menu__btn {
+                visibility: visible;
+                position: absolute;
+            }
+
+            .wrap_menu {
+                visibility: hidden;
+            }
+
+            .img_Alevel {
+                position: absolute;
+                left: 191px;
+                top: 21px;
+            }
+
+            .gear img {
+                position: relative;
+                left: 32px;
+                top: 11px;
+                width: 60px;
+                height: 49px;
+                align-self: center;
+            }
+
+            #menu__toggle:checked ~ .wrap_menu {
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: column;
+                position: relative;
+                visibility: visible;
+                margin-top: 69px;
+                margin-left: -1px;
+                font-weight: bold;
+
+            }
+
+            #menu__toggle:checked ~ .wrap_menu li:nth-child(7) {
+                margin-top: 10px;
+                margin-left: 10px;
+
+            }
+            #menu__toggle:checked ~ .wrap_menu li:nth-child(6) {
+                margin-top: 5px;
+            }
+
+            #menu__toggle:checked ~ .menu__btn > span {
+                transform: rotate(45deg);
+            }
+
+            #menu__toggle:checked ~ .menu__btn > span::before {
+                top: 0;
+                transform: rotate(0);
+            }
+
+            #menu__toggle:checked ~ .menu__btn > span::after {
+                top: 0;
+                transform: rotate(90deg);
+            }
+
+            .top_bottom {
+                margin-top: 40px;
+            }
+
+            .left_colum p {
+                font-size: 25px;
+                text-align: center;
+            }
+
+            .wrap_center {
+                width: 100%;
+                flex-direction: column;
+            }
+
+            .wrap_center div.left_colum, div.cent_colum, div.right_colum {
+                align-self: stretch;
+                width: 100%;
+            }
+
+            .cent_colum h2 {
+                font-size: 25px;
+            }
+
+            .cent_colum ul {
+                font-size: 20px;
+            }
+
+            .right_colum h4 {
+                font-size: 25px;
+            }
+
+            .right_colum div ul {
+                font-size: 20px;
+            }
+
+            .wrap_center div:nth-child(2) {
+                border-right: none;
+            }
+
+            .bottom {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .box2 {
+                width: 360px;
+                margin-right: 0;
+                flex-direction: column;
+                height: 100%;
+                border-bottom: none;
+            }
+
+            .box2 p, span {
+                width: 96%;
+
+            }
+            .box2 p{
+                margin-left: 13px;
+            }
+        }
+        @media (max-width: 375px) {
+            .menu__btn {
+                visibility: visible;
+                position: absolute;
+            }
+
+            .wrap_menu {
+                visibility: hidden;
+            }
+
+            .img_Alevel {
+                position: absolute;
+                left: 191px;
+                top: 21px;
+            }
+
+            .gear img {
+                position: relative;
+                left: 32px;
+                top: 11px;
+                width: 60px;
+                height: 49px;
+                align-self: center;
+            }
+
+            #menu__toggle:checked ~ .wrap_menu {
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: column;
+                position: relative;
+                visibility: visible;
+                margin-top: 69px;
+                margin-left: -1px;
+                font-weight: bold;
+
+            }
+
+            #menu__toggle:checked ~ .wrap_menu li:nth-child(7) {
+                margin-top: 10px;
+                margin-left: 10px;
+
+            }
+            #menu__toggle:checked ~ .wrap_menu li:nth-child(6) {
+                margin-top: 5px;
+            }
+
+            #menu__toggle:checked ~ .menu__btn > span {
+                transform: rotate(45deg);
+            }
+
+            #menu__toggle:checked ~ .menu__btn > span::before {
+                top: 0;
+                transform: rotate(0);
+            }
+
+            #menu__toggle:checked ~ .menu__btn > span::after {
+                top: 0;
+                transform: rotate(90deg);
+            }
+
+            .top_bottom {
+                margin-top: 40px;
+            }
+
+            .left_colum p {
+                font-size: 25px;
+                text-align: center;
+            }
+
+            .wrap_center {
+                width: 100%;
+                flex-direction: column;
+            }
+
+            .wrap_center div.left_colum, div.cent_colum, div.right_colum {
+                align-self: stretch;
+                width: 100%;
+            }
+
+            .cent_colum h2 {
+                font-size: 25px;
+            }
+
+            .cent_colum ul {
+                font-size: 20px;
+            }
+
+            .right_colum h4 {
+                font-size: 25px;
+            }
+
+            .right_colum div ul {
+                font-size: 20px;
+            }
+
+            .wrap_center div:nth-child(2) {
+                border-right: none;
+            }
+
+            .bottom {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .box2 {
+                width: 360px;
+                margin-right: 0;
+                flex-direction: column;
+                height: 100%;
+                border-bottom: none;
+            }
+
+            .box2 p, span {
+                width: 96%;
+
+            }
+            .box2 p{
+                margin-left: 13px;
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="main">
+    <div class="wrap_head">
+        <div class="wrap_top_top">
+            <div class="gear"><img
+                    src="https://t3.ftcdn.net/jpg/00/97/17/52/240_F_97175214_k5Yg6hpnZ0Yjrmfy3nXOzHfEQos3zuEa.jpg"
+                    alt=""></div>
+            <input id="menu__toggle" type="checkbox"/>
+            <label class="menu__btn" for="menu__toggle">
+                <span></span>
+            </label>
+            <ul class="wrap_menu">
+                <li><img src="https://t4.ftcdn.net/jpg/01/09/46/77/240_F_109467785_eeYWH2tY4CnkDl9BtuYO6hWjk7hH0okU.jpg"
+                         alt="">Все
+                </li>
+                <li><img src="https://t3.ftcdn.net/jpg/00/83/69/68/240_F_83696860_E3fjlMoSdp09fYm9b8FpeolSSS9sG5JL.jpg"
+                         alt="">Изображение
+                </li>
+                <li><img src="https://t3.ftcdn.net/jpg/00/82/56/66/240_F_82566612_fMJJp6uD8LnHrUc0WpVgsQelZa1vTxIz.jpg"
+                         alt="">Видео
+                </li>
+                <li><img src="https://t4.ftcdn.net/jpg/01/32/42/17/240_F_132421793_uTO9DQFdFeyETi3ZPqeSy9nh4ec0shOd.jpg"
+                         alt="">Новости
+                </li>
+                <li><img src="https://t3.ftcdn.net/jpg/02/56/14/20/240_F_256142037_ZS0eXL2tmO6q4uzXthCKPjbA5GeqWXfw.jpg"
+                         alt="">
+                    Покупки
+                </li>
+                <li><img style="height: 15px;" src="https://www.flaticon.com/svg/static/icons/svg/512/512222.svg"
+                         alt="">Больше
+                </li>
+                <li>Найстройка</li>
+            </ul>
+            <div class="img_Alevel"><img src="./A-level.png" alt=""></div>
+        </div>
+        <div class="top_centr">A-LeVeL</div>
+        <div class="top_bottom"><span>CSS</span> <span>це</span> <span>ķřутÖ</span></div>
+    </div>
+    <div class="wrap_center">
+        <div class="left_colum">
+            <p>
+                <b style="margin-left: 30px" class="first_big_letter">Каскадные таблицы стилей (CSS)</b> используются
+                для описания внешнего вида документа,
+                написанного языком разметки. CSS привносит жизнь в HTML-документ, выбирая шрифты,
+                применяя цвета, элементы. <b>Объявление стиля состоит из двух частей:</b> элемента веб-страницы
+                — <b>селектора</b>, и команды форматирования — <b>блока объявления</b>.
+            </p>
+        </div>
+        <div class="cent_colum">
+            <div>
+                <h2 style="width: 200px; color: white; margin: 0 auto ">Селекторы CSS:</h2>
+                <ul>
+                    <li>
+                        <ul>
+                            <li>универсальными</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul>
+                            <li>електором элемента</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul>
+                            <li>классовый селектор</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul>
+                            <li>селектор ID</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="right_colum">
+            <h4 style="text-align: center; font-style: italic">Примеры селекторов:</h4>
+            <div>
+                <ul style="width: 150px; margin: 0 auto">
+                    <li>* {}</li>
+                    <li>p.class {}</li>
+                    <li>*.class {}</li>
+                    <li>.class {}</li>
+                    <li>span {}</li>
+                    <li>div#id</li>
+                    <li>span#id</li>
+                    <li>article#id</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="bottom">
+        <img src="./cup.png" alt="">
+        <div class="box">
+            <div class="box2">
+                <p>Контакты: Харьков</p>
+                <span>ул. Дружбы 48</span>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

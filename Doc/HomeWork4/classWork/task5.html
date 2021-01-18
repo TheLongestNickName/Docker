@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            width: 75px;
+            height: 75px;
+            border: 1px solid black;
+            margin-top: 5px;
+
+        }
+        .box1{
+            transform-origin: left top;
+        }
+        .box1:hover{
+            transform: rotate(720deg);
+            transition: all 5s ease-in-out;
+        }
+        box2{
+            transform-origin: center;
+        }
+        .box2:hover{
+            transform: rotate(45deg);
+            transition: all 2s ease-in-out;
+        }
+        .box3{
+            transform-origin: bottom right;
+        }
+        .box3:hover{
+            transform: rotate(120deg);
+            transition: all 2s ease-in-out;
+        }
+        .box4{
+            transform-origin: bottom left;
+        }
+        .box4:hover{
+            transform: rotate(180deg);
+            transition: all 2s ease-in-out;
+        }
+        .box5{
+            transform-origin: bottom right;
+        }
+        .box5:hover{
+            transform: scale(2,2);
+            transition: all 1s ease-in-out;
+        }
+        .box6{
+            transform-origin: bottom right;
+        }
+        .box6:hover{
+            transform: skewX(40deg);
+            transition: all 1s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <div style="margin: 0 auto; width: 100px;">
+        <div class="box box1"></div>
+        <div class="box box2"></div>
+        <div class="box box3"></div>
+        <div class="box box4"></div>
+        <div class="box box5"></div>
+        <div class="box box6"></div>
+    </div>
+</body>
+</html>

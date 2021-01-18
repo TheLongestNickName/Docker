@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    .box1{
+        width: 50px;
+        height: 50px;
+        border: 1px solid red
+    }
+    .box2{
+        width: 50px;
+        height: 50px;
+        border: 1px solid blue;
+    }
+    .box3{
+        width: 50px;
+        height: 50px;
+        border: 1px solid green;
+    }
+
+    .wrap div.flot div{
+        float: left;
+        margin-left: 19px;
+        margin-top: 150px;
+    }
+    .box1_1{
+        position: relative;
+        left: 28px;
+        top: 21px;
+    }
+    .box1_2{
+        position: relative;
+        left: 100px;
+        top: 68px;
+    }
+    .box1_3{
+        position: relative;
+        left: 154px;
+        top: 117px;
+    }
+.box2_1{
+    position: relative;
+left: 50px;
+}
+.box2_2{
+    position: relative;
+    left: 75px;
+    bottom: 25px;
+}
+.box2_3{
+    position: relative;
+    left: 100px;
+    bottom: 50px;
+}
+.wrap{
+    max-width: 1024px;
+    margin: 0 auto;
+    height: 600px;
+}
+.wrap1{
+    clear: both;
+
+    width: 1000px;
+    margin: 0 auto;
+    margin-top: 300px;
+}
+.wrap2{
+    float: left;
+
+}
+
+.wrap3{
+    float: left;
+    margin-left: 363px;
+
+}
+.wrap3 .box2_1{
+    background: red;
+}
+.wrap3 .box2_2{
+    background: blue;
+}
+.wrap3 .box2_3{
+    background: green;
+}
+
+.wrap4{
+    float: right;
+    margin-left: 50px;
+
+
+}
+.wrap4 .box2_1{
+    background: red;
+}
+.wrap4 .box2_2{
+    background: blue;
+    z-index: 1;
+}
+.wrap4 .box2_3{
+    background: green;
+}
+
+.wrap5{
+    margin: 0 auto;
+    width: 216px;
+    position: relative;
+    right: 15px;
+
+}
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="wrap5">
+            <div class="box1 box1_1">
+            </div>
+            <div  class="box2 box1_2">
+            </div>
+            <div class="box3 box1_3">
+            </div>
+            <div class="flot">
+                <div class="box1"></div>
+                <div class="box2"></div>
+                <div class="box3"></div>
+            </div>
+        </div>
+        <div class="wrap1" >
+            <div class="wrap2">
+                <div class="box1 box2_1"></div>
+                <div class="box2 box2_2"></div>
+                <div class="box3 box2_3"></div>
+            </div>
+            <div class="wrap3">
+                <div class="box1 box2_1"></div>
+                <div class="box2 box2_2"></div>
+                <div class="box3 box2_3"></div>
+            </div>
+            <div class="wrap4">
+                <div class="box1 box2_1"></div>
+                <div class="box2 box2_2"></div>
+                <div class="box3 box2_3"></div>
+            </div>
+            <br style="clear: both">
+        </div>
+
+    </div>
+</body>
+</html>
