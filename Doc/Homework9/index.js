@@ -95,3 +95,116 @@
 //     }
 //
 // }
+// function getMin(){
+//     let a = arguments.length
+//        let b = arguments[0];
+//        for(var i=0; i<a; i++){
+//         if (arguments[i]<b){
+//             b = arguments[i];
+//            continue
+//         }
+//     }
+//        return b
+// }
+//
+// console.log(getMin(12,45,26,7,78,76,1))
+
+let Ingredients = {
+    "Мясо": {
+        "Свенина": "450 грамм",
+        "Говядина": "450 грамм",
+        "Курица": "450 грамм",
+    },
+    "Мясные изделия": {
+        "Ветчина": "300 грамм",
+        "Колбаса": "300 грамм",
+        "Копчености": "300 грамм",
+    },
+    "Растительное масло": "2 Ст.ложки",
+    "Чеснок": "2-4 Зубчиков",
+    "Луковица": "1 штука",
+    "Томатная паста": "2 Ст.ложка",
+    "Маринованные огурчики": "2-4 штуки",
+    "Маслины": "По вкусу(+ каперсы по желанию)",
+    "Соль, перец, специи, зелень": "По вкусу",
+    "Лимон и сметана": "По вкусу",
+}
+
+
+function showIngredients (obj){
+    let value="";
+    for( var keys in obj){
+        var b = obj[keys]
+        if (typeof (b) == "object"){
+            for(var keys2 in b){
+                value += `${keys}  -  ${keys2}  -  ${b[keys2]} или` + "\n"
+            }
+        } else {
+            value += `${keys}  -  ${obj[keys]}` + "\n"
+        }
+    }
+    alert(`ИНГРЕДИЕНТЫ ДЛЯ СОЛЯНКИ:`+ "\n" + value)
+}
+function inputValueIngredients(obj) {
+    let newObj = {...obj, "Мясо": {...obj["Мясо"]}, "Мясные изделия": {...obj["Мясные изделия"]}}
+    var i = 0;
+    var value = "";
+    var value2 = [];
+    for (var keys in newObj) {
+        i++;
+    }
+
+    for (i-3; 0 < i; i--) {
+
+        switch (i){
+            case 7:
+                value2.push(prompt("Укажите какой тип мяса вы используете: Свенина, говядина, курица - через зяпятую укажите вес", "Тип мяса, 450"  ))
+                break
+            case 6:
+                value2.push(prompt("Укажите какой тип мясных изделий вы используете: Ветчина, Колбаса, Копчености - через зяпятую укажите вес", "Мясныe изделия,300"  ))
+                break
+            case 5:
+                value2.push(prompt("Сколько зубочков чеснока вы используете?  ", "2"  ))
+                break
+            case 4:
+                value2.push(prompt("Сколько столовых ложек Растительного масла вы используете? ", "2-4"  ))
+                break
+            case 3:
+                value2.push(prompt("Сколько луковиц вы используете? ", "1"  ))
+                break
+            case 2:
+                value2.push(prompt("Сколько столовых ложек  Томатной пасты вы используете? ", "2"  ))
+                break
+            case 1:
+                value2.push(prompt("Сколько Маринованных огурцрв вы используете? ", "2-4"  ))
+                break
+        }
+        console.log(newObj["Мясные изделия"]["Ветчина"] == "300 грамм")
+        // for (var keys in newObj) {
+        //     var b = newObj[keys];
+        //
+        //     if (typeof (b) == "object") {
+        //
+        //         for (var keys2 in b) {
+        //             value += `${keys2}, `
+        //         }
+        //         console.log(value)
+        //
+        //     } else {
+        //         // value += `${keys}  -  ${obj[keys]}` + "\n"
+        //     }
+        //
+        // }
+
+    }
+}
+
+function CookingHodgepodge(Ingredients){
+    showIngredients(Ingredients)
+    inputValueIngredients(Ingredients)
+}
+
+
+
+
+CookingHodgepodge(Ingredients);
