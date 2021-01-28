@@ -369,3 +369,42 @@ async function CookingHodgepodge(Ingredients){
 
 
 CookingHodgepodge(Ingredients);
+
+
+let blackArr = [8, 17, 3, 48, 15, 14, 1];
+
+function minNubers(arrs){
+    let value;
+    let value2;
+
+    for (let i = 0; i <arrs.length; i++){
+        if (!value){
+            value = arrs[i]
+        }
+        if (arrs[i] < value){
+            value = arrs[i]
+        }
+    }
+    for (let i = 0; i < arrs.length; i++){
+        if (!value2){
+            if ( arrs[i] == value){
+                value2 = arrs[i+1]
+            }else{
+                value2 = arrs[i]
+            }
+        }
+
+        if (arrs[i] === value){
+            continue;
+        }
+
+        if (arrs[i] < value2){
+            value2 = arrs[i]
+        }
+
+    }
+
+    return (value+value2)
+}
+
+console.log(minNubers(blackArr))
